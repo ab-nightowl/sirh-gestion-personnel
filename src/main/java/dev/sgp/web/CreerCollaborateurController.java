@@ -31,7 +31,7 @@ public class CreerCollaborateurController extends HttpServlet {
 
 		String nomParam = req.getParameter("nom");
 		String prenomParam = req.getParameter("prenom");
-		String dateDeNaissanceParam = req.getParameter("dateDeNaissance");
+		String dateDeNaissanceParam = req.getParameter("date-de-naissance");
 		String adresseParam = req.getParameter("adresse");
 		String numeroSecuParam = req.getParameter("numeroSecu");
 		
