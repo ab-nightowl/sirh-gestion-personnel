@@ -15,33 +15,33 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12 col-lg-12">
 			
-				<span class="col-md-4">
+				<span class="col-md-4 col-lg-4">
 					<div> <h3>Chemin</h3> </div>
 					<c:forEach var="stat" items="${stats}">
 						<div>${stat.key}</div>
 					</c:forEach>
 				</span>
-				<span class="col-md-2">
+				<span class="col-md-2 col-lg-2">
 					<div> <h3>Nombre de visites</h3> </div>
 					<c:forEach var="stat" items="${stats}">
 						<div>${stat.value.getCount()}</div>
 					</c:forEach>
 				</span>
-				<span class="col-md-2">
+				<span class="col-md-2 col-lg-2">
 					<div> <h3>Min (ms)</h3> </div>
 					<c:forEach var="stat" items="${stats}">
 						<div>${stat.value.getMin()}</div>
 					</c:forEach>
 				</span>
-				<span class="col-md-2">
+				<span class="col-md-2 col-lg-2">
 					<div> <h3>Max (ms)</h3> </div>
 					<c:forEach var="stat" items="${stats}">
 						<div>${stat.value.getMax()}</div>
 					</c:forEach>
 				</span>
-				<span class="col-md-2">
+				<span class="col-md-2 col-lg-2">
 					<div> <h3>Moyenne (ms)</h3> </div>
 					<c:forEach var="stat" items="${stats}">
 						<div>${stat.value.getAverage()}</div>

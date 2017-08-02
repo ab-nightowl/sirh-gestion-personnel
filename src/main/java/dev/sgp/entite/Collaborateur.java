@@ -70,6 +70,14 @@ public class Collaborateur {
 	public void setNumeroSecu(String numeroSecu) {
 		this.numeroSecu = numeroSecu;
 	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 	
 	
 }
