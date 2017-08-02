@@ -1,4 +1,4 @@
-package dev.sgp.filtre;
+package dev.sgp.web.filtre;
 
 import java.io.IOException;
 
