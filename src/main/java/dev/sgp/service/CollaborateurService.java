@@ -21,8 +21,13 @@ public class CollaborateurService {
 		String emailPro = stringBuilder.append(collab.getPrenom()).append(".").append(collab.getNom()).append("@").append("societe.com").toString();
 		ZonedDateTime dateHeureCreation = ZonedDateTime.now();
 		Boolean actif = true;
-		
 		String photo = "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png";
+		
+		collab.setMatricule(matricule);
+		collab.setEmailPro(emailPro);
+		collab.setDateHeureCreation(dateHeureCreation);
+		collab.setActif(actif);
+		collab.setPhoto(photo);
 		
 		listeCollaborateurs.add(collab);
 	}

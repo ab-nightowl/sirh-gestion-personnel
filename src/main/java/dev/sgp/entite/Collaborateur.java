@@ -78,6 +78,38 @@ public class Collaborateur {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
+
+	public String getMatricule() {
+		return matricule;
+	}
+
+	public void setMatricule(String matricule) {
+		this.matricule = matricule;
+	}
+
+	public String getEmailPro() {
+		return emailPro;
+	}
+
+	public void setEmailPro(String emailPro) {
+		this.emailPro = emailPro;
+	}
+
+	public ZonedDateTime getDateHeureCreation() {
+		return dateHeureCreation;
+	}
+
+	public void setDateHeureCreation(ZonedDateTime dateHeureCreation) {
+		this.dateHeureCreation = dateHeureCreation;
+	}
+
+	public Boolean getActif() {
+		return actif;
+	}
+
+	public void setActif(Boolean actif) {
+		this.actif = actif;
+	}
 	
 	
 }

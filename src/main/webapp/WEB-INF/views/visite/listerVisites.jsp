@@ -26,25 +26,25 @@
 				<span class="col-md-2 col-lg-2">
 					<div> <h3>Nombre de visites</h3> </div>
 					<c:forEach var="stat" items="${stats}">
-						<div>${stat.value.getCount()}</div>
+						<div>${stat.value.count}</div>
 					</c:forEach>
 				</span>
 				<span class="col-md-2 col-lg-2">
 					<div> <h3>Min (ms)</h3> </div>
 					<c:forEach var="stat" items="${stats}">
-						<div>${stat.value.getMin()}</div>
+						<div>${stat.value.min}</div>
 					</c:forEach>
 				</span>
 				<span class="col-md-2 col-lg-2">
 					<div> <h3>Max (ms)</h3> </div>
 					<c:forEach var="stat" items="${stats}">
-						<div>${stat.value.getMax()}</div>
+						<div>${stat.value.max}</div>
 					</c:forEach>
 				</span>
 				<span class="col-md-2 col-lg-2">
 					<div> <h3>Moyenne (ms)</h3> </div>
 					<c:forEach var="stat" items="${stats}">
-						<div>${stat.value.getAverage()}</div>
+						<div>${stat.value.average}</div>
 					</c:forEach>
 				</span>
 				
