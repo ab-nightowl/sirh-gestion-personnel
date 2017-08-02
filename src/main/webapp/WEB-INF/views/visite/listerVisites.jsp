@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="<c:url value='/bootstrap-3.3.7-dist/css/bootstrap.css'/>" >
 </head>
 <body>
-	<h1>Statistiques</h1>
-
 	<div class="container">
+		<h1>Statistiques</h1>
+		
 		<div class="row">
 			<div class="col-md-12 col-lg-12">
 			
