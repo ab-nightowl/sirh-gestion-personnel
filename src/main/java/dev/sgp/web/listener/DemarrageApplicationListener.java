@@ -23,12 +23,14 @@ public class DemarrageApplicationListener implements ServletContextListener {
 		Collaborateur collab3 = new Collaborateur("Dupont", "B", LocalDate.now(), "Lille", "1170862891012345");
 		Collaborateur collab4 = new Collaborateur("Martin", "B", LocalDate.now(), "Montpellier", "1170834891012345");
 		Collaborateur collab5 = new Collaborateur("Bernard", "A", LocalDate.now(), "Lyon", "1170869891012345");
+		Collaborateur collab6 = new Collaborateur("Bernard", "B", LocalDate.now(), "Nancy", "1170854891012345");
 		
 		collabService.sauvegarderCollaborateur(collab1);
 		collabService.sauvegarderCollaborateur(collab2);
 		collabService.sauvegarderCollaborateur(collab3);
 		collabService.sauvegarderCollaborateur(collab4);
 		collabService.sauvegarderCollaborateur(collab5);
+		collabService.sauvegarderCollaborateur(collab6);
 	}
 
 	@Override
