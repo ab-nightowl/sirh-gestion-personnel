@@ -1,28 +1,31 @@
 package dev.sgp.service;
 
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import dev.sgp.entite.CollabEvt;
 import dev.sgp.entite.Collaborateur;
 import dev.sgp.entite.TypeCollabEvt;
 
-@ApplicationScoped
+@Stateless
 public class CollaborateurService {
 
+	@PersistenceContext(unitName="sgp-pu") private EntityManager em;
+	
 	@Inject Event<CollabEvt> collabEvt;
 	
-	private List<Collaborateur> listeCollaborateurs = new ArrayList<>();
-
 	public List<Collaborateur> listerCollaborateurs() {
-		return listeCollaborateurs;
+		String sql = "select c from Collaborateur c";
+		TypedQuery<Collaborateur> query = em.createQuery(sql, Collaborateur.class);
+		return query.getResultList();
 	}
 
 	public void sauvegarderCollaborateur(Collaborateur collab) {
@@ -39,7 +42,7 @@ public class CollaborateurService {
 		collab.setActif(actif);
 		collab.setPhoto(photo);
 		
-		listeCollaborateurs.add(collab);
+		em.persist(collab);
 		
 		collabEvt.fire(new CollabEvt(dateHeureCreation, TypeCollabEvt.CREATION_COLLAB, matricule)); // déclenche un nouvel événement
 		
