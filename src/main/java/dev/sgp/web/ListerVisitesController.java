@@ -8,6 +8,7 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +23,7 @@ import dev.sgp.util.Constantes;
 public class ListerVisitesController extends HttpServlet {
 	
 	// récupération du service
-	private VisiteWebService visiteWebService = Constantes.VISITE_WEB_SERVICE;
+	@Inject private VisiteWebService visiteWebService;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

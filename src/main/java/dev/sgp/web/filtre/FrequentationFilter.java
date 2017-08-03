@@ -2,6 +2,7 @@ package dev.sgp.web.filtre;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -20,7 +21,7 @@ description = "Frequentation filter")
 public class FrequentationFilter implements Filter {
 
 	// récupération du service
-	private VisiteWebService visiteWebService = Constantes.VISITE_WEB_SERVICE;
+	@Inject private VisiteWebService visiteWebService;
 	
 	@Override
 	public void destroy() {
