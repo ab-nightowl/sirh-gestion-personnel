@@ -1,28 +1,30 @@
 package dev.sgp.service;
 
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import dev.sgp.entite.CollabEvt;
 
-@ApplicationScoped
+@Stateless
 public class ActiviteService {
 	
-	private List<CollabEvt> listeCollabEvt = new ArrayList<>();
+	@PersistenceContext(unitName="sgp-pu") private EntityManager em;
 	
 	public void recevoirEvenementCollab(@Observes CollabEvt evt) {
 		if (evt != null) {
-			listeCollabEvt.add(evt);
+			em.persist(evt);
 		}
 	}
 	
 	public List<CollabEvt> listerActivitesCollab() {
-		return listeCollabEvt;
+		String sql = "select evt from CollabEvt evt";
+		TypedQuery<CollabEvt> query = em.createQuery(sql, CollabEvt.class);
+		return query.getResultList();
 	}
 	
 	
