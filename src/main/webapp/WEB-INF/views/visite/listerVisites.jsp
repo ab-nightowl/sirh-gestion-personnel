@@ -17,36 +17,36 @@
 		<div class="row">
 			<div class="col-md-12 col-lg-12">
 			
-				<span class="col-md-4 col-lg-4">
-					<div> <h3>Chemin</h3> </div>
+				<div class="col-md-4 col-lg-4">
+					<h3>Chemin</h3>
 					<c:forEach var="stat" items="${stats}">
-						<div>${stat.key}</div>
+						<p>${stat.key}</p>
 					</c:forEach>
-				</span>
-				<span class="col-md-2 col-lg-2">
-					<div> <h3>Nombre de visites</h3> </div>
+				</div>
+				<div class="col-md-2 col-lg-2">
+					<h3>Nombre de visites</h3>
 					<c:forEach var="stat" items="${stats}">
-						<div>${stat.value.count}</div>
+						<p>${stat.value.count}</p>
 					</c:forEach>
-				</span>
-				<span class="col-md-2 col-lg-2">
-					<div> <h3>Min (ms)</h3> </div>
+				</div>
+				<div class="col-md-2 col-lg-2">
+					<h3>Min (ms)</h3>
 					<c:forEach var="stat" items="${stats}">
-						<div>${stat.value.min}</div>
+						<p>${stat.value.min}</p>
 					</c:forEach>
-				</span>
-				<span class="col-md-2 col-lg-2">
-					<div> <h3>Max (ms)</h3> </div>
+				</div>
+				<div class="col-md-2 col-lg-2">
+					<h3>Max (ms)</h3>
 					<c:forEach var="stat" items="${stats}">
-						<div>${stat.value.max}</div>
+						<p>${stat.value.max}</p>
 					</c:forEach>
-				</span>
-				<span class="col-md-2 col-lg-2">
-					<div> <h3>Moyenne (ms)</h3> </div>
+				</div>
+				<div class="col-md-2 col-lg-2">
+					<h3>Moyenne (ms)</h3>
 					<c:forEach var="stat" items="${stats}">
-						<div>${stat.value.average}</div>
+						<p>${stat.value.average}</p>
 					</c:forEach>
-				</span>
+				</div>
 				
 			</div>
 		</div>
