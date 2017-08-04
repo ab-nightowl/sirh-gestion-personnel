@@ -31,8 +31,8 @@ public class Collaborateur {
 	
 	public Collaborateur() {}
 
-	public Collaborateur(String nom, String prenom, LocalDate dateDeNaissance, String adresse,
-			String numeroSecu) {
+	public Collaborateur(String matricule, String nom, String prenom, LocalDate dateDeNaissance, String adresse,
+			String numeroSecu, String emailPro, String photo) {
 		this.id = id;
 		this.matricule = matricule;
 		this.nom = nom;

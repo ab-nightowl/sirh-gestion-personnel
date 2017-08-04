@@ -35,7 +35,7 @@ public class CreerCollaborateurController extends HttpServlet {
 		String prenomParam = req.getParameter("prenom");
 		String dateDeNaissanceParam = req.getParameter("date-de-naissance");
 		String adresseParam = req.getParameter("adresse");
-		String numeroSecuParam = req.getParameter("numeroSecu");
+		String numeroSecuParam = req.getParameter("num-secu");
 		
 		resp.setContentType("text/html");
 		
@@ -63,7 +63,7 @@ public class CreerCollaborateurController extends HttpServlet {
 		String numeroSecu = numeroSecuParam;
 		
 		
-		Collaborateur collab = new Collaborateur(nom, prenom, dateDeNaissance, adresse, numeroSecu);
+		Collaborateur collab = new Collaborateur(null, nom, prenom, dateDeNaissance, adresse, numeroSecu, null, null);
 		
 		collabService.sauvegarderCollaborateur(collab);
 		

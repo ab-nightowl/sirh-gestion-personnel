@@ -48,5 +48,32 @@ public class CollaborateurService {
 		
 	}
 	
+	public Collaborateur findById(Integer id) {
+		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.id=:id", Collaborateur.class)
+				.setParameter("id", id);
+		return query.getSingleResult();
+	}
+	
+	public Collaborateur findByMatricule(String matricule) {
+		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.matricule=:matricule", Collaborateur.class)
+				.setParameter("matricule", matricule);
+		return query.getSingleResult();
+	}
+	
+	public Collaborateur updateCollaborateur(String matricule, Collaborateur collab) {
+		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.matricule=:matricule", Collaborateur.class)
+			.setParameter("matricule", matricule);
+		Collaborateur result = query.getSingleResult();
+		
+		result.setEmailPro(collab.getEmailPro());
+		result.setPhoto(collab.getPhoto());
+			
+		ZonedDateTime dateHeureCreation = ZonedDateTime.now();
+		
+		collabEvt.fire(new CollabEvt(dateHeureCreation, TypeCollabEvt.CREATION_COLLAB, collab.getMatricule())); // déclenche un nouvel événement
+		
+		return collab;
+	}
+	
 	
 }

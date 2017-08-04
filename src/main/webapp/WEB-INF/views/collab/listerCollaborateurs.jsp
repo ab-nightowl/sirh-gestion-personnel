@@ -43,8 +43,9 @@
 								<p>...</p>
 							</div>
 						</div>
-						
-						<a class="btn btn-primary pull-right" href="#" role="button">Editer</a>
+
+						<a class="btn btn-primary pull-right"
+							href="/sgp/collaborateurs/editer?matricule=${collab.matricule}" role="button">Editer</a>
 
 					</div>
 
