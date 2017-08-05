@@ -61,10 +61,7 @@ public class CollaborateurService {
 	}
 	
 	public Collaborateur updateCollaborateur(String matricule, Collaborateur collab) {
-		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.matricule=:matricule", Collaborateur.class)
-			.setParameter("matricule", matricule);
-		Collaborateur result = query.getSingleResult();
-		
+		Collaborateur result = this.findByMatricule(matricule);
 		result.setEmailPro(collab.getEmailPro());
 		result.setPhoto(collab.getPhoto());
 			
