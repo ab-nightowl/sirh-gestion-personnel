@@ -63,7 +63,7 @@ public class CreerCollaborateurController extends HttpServlet {
 		String numeroSecu = numeroSecuParam;
 		
 		
-		Collaborateur collab = new Collaborateur(null, nom, prenom, dateDeNaissance, adresse, numeroSecu, null, null);
+		Collaborateur collab = new Collaborateur(null, nom, prenom, dateDeNaissance, adresse, numeroSecu, null, null, null, null);
 		
 		collabService.sauvegarderCollaborateur(collab);
 		

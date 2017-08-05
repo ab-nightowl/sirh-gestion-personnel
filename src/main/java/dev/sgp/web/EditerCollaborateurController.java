@@ -67,7 +67,7 @@ public class EditerCollaborateurController extends HttpServlet {
 		}
 
 		collabService.updateCollaborateur(
-				matricule, new Collaborateur(matricule, nom, prenom, dateDeNaissance, adresse, numeroSecu, emailPro, photo));
+				matricule, new Collaborateur(matricule, nom, prenom, dateDeNaissance, adresse, numeroSecu, emailPro, photo, null, null));
 
 		resp.sendRedirect("lister");
 	}
