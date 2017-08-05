@@ -22,12 +22,6 @@ public class CollaborateurService {
 	
 	@Inject Event<CollabEvt> collabEvt;
 	
-	public List<Collaborateur> listerCollaborateurs() {
-		String sql = "select c from Collaborateur c";
-		TypedQuery<Collaborateur> query = em.createQuery(sql, Collaborateur.class);
-		return query.getResultList();
-	}
-
 	public void sauvegarderCollaborateur(Collaborateur collab) {
 		String matricule = UUID.randomUUID().toString();
 		StringBuilder stringBuilder = new StringBuilder();
@@ -48,6 +42,12 @@ public class CollaborateurService {
 		
 	}
 	
+	public List<Collaborateur> listerCollaborateurs() {
+		String sql = "select c from Collaborateur c";
+		TypedQuery<Collaborateur> query = em.createQuery(sql, Collaborateur.class);
+		return query.getResultList();
+	}
+
 	public Collaborateur findById(Integer id) {
 		TypedQuery<Collaborateur> query = em.createQuery("select c from Collaborateur c where c.id=:id", Collaborateur.class)
 				.setParameter("id", id);
@@ -70,6 +70,12 @@ public class CollaborateurService {
 		collabEvt.fire(new CollabEvt(dateHeureCreation, TypeCollabEvt.CREATION_COLLAB, collab.getMatricule())); // déclenche un nouvel événement
 		
 		return collab;
+	}
+	
+	public List<Collaborateur> getCollaborateurByIdDepartement(int idDepartement){
+		return em.createNamedQuery("collaborateur.getCollaborateurByIdDepartement", Collaborateur.class)
+				.setParameter("idDepartement", idDepartement)
+				.getResultList();
 	}
 	
 	

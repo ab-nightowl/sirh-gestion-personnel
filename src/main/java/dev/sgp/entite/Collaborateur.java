@@ -3,14 +3,11 @@ package dev.sgp.entite;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="collaborateurs")
+@NamedQuery(name="collaborateurs.getCollaborateurByIdDepartement", query="select c from Collaborateur c where c.departement.id=:id_departement")
 public class Collaborateur {
 	
 	@Id
@@ -28,11 +25,15 @@ public class Collaborateur {
 	private ZonedDateTime dateHeureCreation;
 	private Boolean actif;
 	
+	private String intitulePoste;
+	@ManyToOne
+	@JoinColumn(name="id_departement")
+	private Departement departement;
 	
 	public Collaborateur() {}
 
 	public Collaborateur(String matricule, String nom, String prenom, LocalDate dateDeNaissance, String adresse,
-			String numeroSecu, String emailPro, String photo) {
+			String numeroSecu, String emailPro, String photo, String intitulePoste, Departement departement) {
 		this.id = id;
 		this.matricule = matricule;
 		this.nom = nom;
@@ -44,6 +45,8 @@ public class Collaborateur {
 		this.photo = photo;
 		this.dateHeureCreation = dateHeureCreation;
 		this.actif = actif;
+		this.intitulePoste = intitulePoste;
+		this.departement = departement;
 	}
 
 	public Integer getId() {
@@ -132,6 +135,22 @@ public class Collaborateur {
 
 	public void setActif(Boolean actif) {
 		this.actif = actif;
+	}
+
+	public String getIntitulePoste() {
+		return intitulePoste;
+	}
+
+	public void setIntitulePoste(String intitulePoste) {
+		this.intitulePoste = intitulePoste;
+	}
+
+	public Departement getDepartement() {
+		return departement;
+	}
+
+	public void setDepartement(Departement departement) {
+		this.departement = departement;
 	}
 
 	
