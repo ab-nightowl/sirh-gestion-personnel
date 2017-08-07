@@ -27,12 +27,12 @@ public class DemarrageApplicationListener implements ServletContextListener {
 		dps.sauvegarderDepartement(new Departement(null, "Informatique"));
 		dps.sauvegarderDepartement(new Departement(null, "Administratif"));
 
-		Collaborateur collab1 = new Collaborateur(null, "Dupont", "A", LocalDate.now(), "Bordeaux", "1170833891012345", null, null, "Expert Comptable", dps.getDepartementById(0));
-		Collaborateur collab2 = new Collaborateur(null, "Martin", "A", LocalDate.now(), "Nantes", "1170844891012345", null, null, "DRH", dps.getDepartementById(1));
-		Collaborateur collab3 = new Collaborateur(null, "Dupont", "B", LocalDate.now(), "Lille", "1170862891012345", null, null, "Chef de projet", dps.getDepartementById(2));
-		Collaborateur collab4 = new Collaborateur(null, "Martin", "B", LocalDate.now(), "Montpellier", "1170834891012345", null, null, "Assistant d'administration", dps.getDepartementById(3));
-		Collaborateur collab5 = new Collaborateur(null, "Bernard", "A", LocalDate.now(), "Lyon", "1170869891012345", null, null, "Administrateur réseau", dps.getDepartementById(2));
-		Collaborateur collab6 = new Collaborateur(null, "Bernard", "B", LocalDate.now(), "Nancy", "1170854891012345", null, null, "Développeur Java EE", dps.getDepartementById(2));
+		Collaborateur collab1 = new Collaborateur(null, "Dupont", "A", LocalDate.now(), "Bordeaux", "1170833891012345", null, null, "Expert Comptable", dps.getDepartementById(1));
+		Collaborateur collab2 = new Collaborateur(null, "Martin", "A", LocalDate.now(), "Nantes", "1170844891012345", null, null, "DRH", dps.getDepartementById(2));
+		Collaborateur collab3 = new Collaborateur(null, "Dupont", "B", LocalDate.now(), "Lille", "1170862891012345", null, null, "Chef de projet", dps.getDepartementById(3));
+		Collaborateur collab4 = new Collaborateur(null, "Martin", "B", LocalDate.now(), "Montpellier", "1170834891012345", null, null, "Assistant d'administration", dps.getDepartementById(4));
+		Collaborateur collab5 = new Collaborateur(null, "Bernard", "A", LocalDate.now(), "Lyon", "1170869891012345", null, null, "Administrateur réseau", dps.getDepartementById(3));
+		Collaborateur collab6 = new Collaborateur(null, "Bernard", "B", LocalDate.now(), "Nancy", "1170854891012345", null, null, "Développeur Java EE", dps.getDepartementById(3));
 		
 		collabService.sauvegarderCollaborateur(collab1);
 		collabService.sauvegarderCollaborateur(collab2);
