@@ -23,7 +23,7 @@ public class DepartementService {
 				.getResultList();
 	}
 
-	public Departement getDepartementById(int idDepartement) {
+	public Departement getDepartementById(Integer idDepartement) {
 		return em.createNamedQuery("departements.getDepartementById",
 				Departement.class)
 				.setParameter("id", idDepartement)
