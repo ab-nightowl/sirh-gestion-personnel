@@ -5,6 +5,7 @@
 		<class>dev.sgp.entite.Collaborateur</class>
 		<class>dev.sgp.entite.VisiteWeb</class>
 		<class>dev.sgp.entite.CollabEvt</class>
+		<class>dev.sgp.entite.Departement</class>
 		<properties>
 			
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57InnoDBDialect"/>

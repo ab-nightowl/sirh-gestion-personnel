@@ -16,6 +16,10 @@ public class Departement {
 	
 	private String nom;
 	
+	public Departement() {
+		super();
+	}
+
 	public Departement(Integer id, String nom) {
 		this.id = id;
 		this.nom = nom;
